@@ -5,7 +5,6 @@ import { SelectDropDown } from './components/inputs/Select';
 import { SingleCheckbox } from './components/inputs/SingleCheckbox';
 import { TextArea } from './components/inputs/TextArea';
 import { useForm, FormProvider } from "react-hook-form";
-import axios from 'axios';
 import emailjs from "@emailjs/browser";
 
 function App() {
