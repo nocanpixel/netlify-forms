@@ -1,8 +1,9 @@
-export const IconButton = ({title="title"}) => {
+export const IconButton = ({title="title", type}) => {
     return (
         <button
-            className="linear flex flex-row items-center gap-2 rounded-md bg-indigo-500 px-6 py-2 text-base font-medium text-white transition duration-200 hover:bg-amber-600 active:bg-indigo-700"
+            className="linear flex flex-row items-center gap-2 rounded-md bg-indigo-500 px-6 py-2 text-base font-medium text-white transition duration-200 hover:bg-indigo-600 active:bg-indigo-700"
             data-ripple-light
+            type={type}
         >
             {title}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 -rotate-45">
