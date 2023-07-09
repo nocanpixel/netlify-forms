@@ -15,7 +15,7 @@ function App() {
   const handleSubmit = async (data) => {
     try {
       const response = await axios.post('/.netlify/functions/submitForm', data);
-      console.log(response.data,'WORKING');
+      console.log(response.data,response);
       // Handle success or show a success message to the user
     } catch (error) {
       console.error(error);
