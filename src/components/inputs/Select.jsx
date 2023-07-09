@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
-import { useFieldArray, useFormContext } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -23,7 +23,7 @@ const data = [
 
 export const SelectDropDown = () => {
   const [selected, setSelected] = useState(data[0]);
-  const {setValue, getValues} = useFormContext();
+  const {setValue} = useFormContext();
 
 
   const topicSelected = (e) => {
