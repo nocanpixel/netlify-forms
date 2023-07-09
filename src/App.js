@@ -15,18 +15,20 @@ function App() {
   const onSubmit = (data) => handleSubmit(data);
 
   const handleSubmit = async (data) => {
-    emailjs.send("service_0lctdru","template_lcj7rl4", {
+    console.log(data)
+    emailjs.send("service_ethqtxe","template_lcj7rl4", {
       name: data.name,
       email: data.email,
       message: data.mesage,
-    })
+      copy: data.sendCopy ? data.email : "",
+    }, "8OVGTHtgbT_tkqTLh")
       .then((result) => {
-          console.log(result.text,result);
+          console.log(result);
       }, (error) => {
           console.log(error.text);
       });
   };
-
+  
   return (
     <div className="App">
       <div className='h-screen flex justify-center items-center' >
