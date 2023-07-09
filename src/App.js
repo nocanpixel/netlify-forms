@@ -6,14 +6,16 @@ import { SingleCheckbox } from './components/inputs/SingleCheckbox';
 import { TextArea } from './components/inputs/TextArea';
 import { useForm, FormProvider } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { useRef } from 'react';
 
 function App() {
-  const methods = useForm()
+  const methods = useForm();
+  const form = useRef();
 
   const onSubmit = (data) => handleSubmit(data);
 
   const handleSubmit = async (data) => {
-    emailjs.sendForm('service_0lctdru', 'template_ew93cln', data, '8OVGTHtgbT_tkqTLh')
+    emailjs.sendForm('service_0lctdru', 'template_lcj7rl4', form.current, '8OVGTHtgbT_tkqTLh')
       .then((result) => {
           console.log(result.text,result);
       }, (error) => {
@@ -21,13 +23,12 @@ function App() {
       });
   };
 
-
   return (
     <div className="App">
       <div className='h-screen flex justify-center items-center' >
         <section className="rounded-lg bg-white px-5 py-5 w-full mx-5 md:w-1/2 shadow-md">
           <FormProvider {...methods}>
-          <form className='flex flex-col gap-2' onSubmit={methods.handleSubmit(onSubmit)}>
+          <form ref={form} className='flex flex-col gap-2' onSubmit={methods.handleSubmit(onSubmit)}>
             <div>
               <SelectDropDown  />
             </div>
