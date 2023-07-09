@@ -6,6 +6,7 @@ import { SingleCheckbox } from './components/inputs/SingleCheckbox';
 import { TextArea } from './components/inputs/TextArea';
 import { useForm, FormProvider } from "react-hook-form";
 import axios from 'axios';
+import emailjs from "@emailjs/browser";
 
 function App() {
   const methods = useForm()
@@ -13,14 +14,12 @@ function App() {
   const onSubmit = (data) => handleSubmit(data);
 
   const handleSubmit = async (data) => {
-    try {
-      const response = await axios.post('/.netlify/functions/submitForm', data);
-      console.log(response.data,response);
-      // Handle success or show a success message to the user
-    } catch (error) {
-      console.error(error);
-      // Handle error or show an error message to the user
-    }
+    emailjs.sendForm('service_0lctdru', 'template_ew93cln', data, '8OVGTHtgbT_tkqTLh')
+      .then((result) => {
+          console.log(result.text,result);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
 
