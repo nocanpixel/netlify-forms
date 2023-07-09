@@ -15,7 +15,11 @@ function App() {
   const onSubmit = (data) => handleSubmit(data);
 
   const handleSubmit = async (data) => {
-    emailjs.sendForm('service_0lctdru', 'template_lcj7rl4', form.current, '8OVGTHtgbT_tkqTLh')
+    emailjs.send("service_0lctdru","template_lcj7rl4", {
+      name: data.name,
+      email: data.email,
+      message: data.mesage,
+    })
       .then((result) => {
           console.log(result.text,result);
       }, (error) => {
