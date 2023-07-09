@@ -12,9 +12,7 @@ function App() {
 
   const onSubmit = (data) => handleSubmit(data);
 
-  const handleSubmit = async (e,data) => {
-    e.preventDefault();
-
+  const handleSubmit = async (data) => {
     try {
       const response = await axios.post('/.netlify/functions/submitForm', data);
       console.log(response.data,'WORKING');
