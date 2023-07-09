@@ -19,7 +19,7 @@ function App() {
     emailjs.send("service_ethqtxe","template_lcj7rl4", {
       name: data.name,
       email: data.email,
-      message: data.mesage,
+      message: data.message,
       copy: data.sendCopy ? data.email : "",
     }, "8OVGTHtgbT_tkqTLh")
       .then((result) => {
