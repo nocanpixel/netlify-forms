@@ -32,7 +32,7 @@ export const SelectDropDown = () => {
 
   useEffect(()=>{
     setValue("topic", selected.name)
-  },[selected])
+  },[selected, setValue])
 
 
     return(
