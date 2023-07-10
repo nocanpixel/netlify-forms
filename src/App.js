@@ -24,7 +24,7 @@ function App() {
       .then((result) => {
           return result;
       }, (error) => {
-          return result;
+          return error;
       });
   };
   
