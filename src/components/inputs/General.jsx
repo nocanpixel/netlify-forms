@@ -4,8 +4,8 @@ export const GeneralInput = ({ title = "Title", placeHolder = "Place holder", na
     const { register, formState: {errors} } = useFormContext();
 
     const validatePhoneNumber = (value) => {
-        const isValidPhoneNumber = /^\d{10}$/.test(value);
-        return isValidPhoneNumber || 'Invalid phone number';
+        const phoneNumberRegex = /^(\+49|0)[1-9]\d{1,14}$/; // Regex pattern for German phone numbers
+        return phoneNumberRegex.test(value) || 'Invalid German phone number';
       };
 
     return (
