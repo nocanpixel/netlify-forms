@@ -15,7 +15,6 @@ function App() {
   const onSubmit = (data) => handleSubmit(data);
 
   const handleSubmit = async (data) => {
-    console.log(data)
     emailjs.send("service_ethqtxe","template_lcj7rl4", {
       name: data.name,
       email: data.email,
@@ -23,9 +22,9 @@ function App() {
       copy: data.sendCopy ? data.email : "",
     }, "8OVGTHtgbT_tkqTLh")
       .then((result) => {
-          console.log(result);
+          return result;
       }, (error) => {
-          console.log(error.text);
+          return result;
       });
   };
   
